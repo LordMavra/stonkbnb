@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STONKS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="hero">
+    <div class="hero__overlay"></div>
+
+    <header class="topbar">
+      <!-- Replace the CSS background image for .brand-logo with your logo file -->
+      <a class="brand-logo" href="#" aria-label="Home">
+        <span></span>
+      </a>
+
+      <a class="buy-button" href="#buy">
+        <span>BUY NOW</span>
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M7 31 17 21l6 6L34 10" />
+          <path d="M24 10h10v10" />
+        </svg>
+      </a>
+    </header>
+
+    <section class="hero-content" aria-labelledby="hero-title">
+      <h1 id="hero-title">STONKS</h1>
+
+      <div class="contract-row" id="buy">
+        <div class="contract-box">
+          <span class="contract-label">CA</span>
+          <span class="contract-address" id="contractAddress">xxxxxxxxxxxxxxxxxxxx</span>
+          <button class="copy-button" id="copyButton" type="button">COPY</button>
+        </div>
+
+        <a class="x-button" href="https://x.com" target="_blank" rel="noreferrer" aria-label="Open X">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M10 9h8.4l6.9 9.3L34 9h4l-10.8 12.5L39 39h-8.4l-7.7-10.4L14 39h-4l11-13.7L10 9Zm6.3 3.2 16 23.6h3.4l-16-23.6h-3.4Z" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">Built for the market.</footer>
+  </main>
+
+  <script>
+    const copyButton = document.getElementById('copyButton');
+    const contractAddress = document.getElementById('contractAddress');
+
+    copyButton.addEventListener('click', async () => {
+      const text = contractAddress.textContent.trim();
+
+      try {
+        await navigator.clipboard.writeText(text);
+        copyButton.textContent = 'COPIED';
+      } catch (error) {
+        const temp = document.createElement('textarea');
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        temp.remove();
+        copyButton.textContent = 'COPIED';
+      }
+
+      setTimeout(() => {
+        copyButton.textContent = 'COPY';
+      }, 1400);
+    });
+  </script>
+</body>
+</html>
