@@ -45,16 +45,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
 }
-.brand-logo{
-    width:56px;
-    height:56px;
-    display:block;
 
-    background-image:url("logo.png");
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center;
-}
 }
 /* CSS fallback shown until hero-bg.jpg is added. */
 
@@ -92,7 +83,7 @@ a {
   color: var(--black);
   background:
     linear-gradient(rgba(255,196,0,.18), rgba(255,196,0,.18)),
-    url("logo.png") center / cover no-repeat,
+    url("./logo.png") center / cover no-repeat,
     rgba(255,255,255,.28);
   box-shadow: 0 4px 0 rgba(0,0,0,.08);
 }
