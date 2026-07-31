@@ -81,7 +81,7 @@ a {
     text-decoration: none;
 
     background-image: url("./logo.png");
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #ffc400;
